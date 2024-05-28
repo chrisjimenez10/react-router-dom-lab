@@ -31,16 +31,21 @@ const MailboxDetails = ({mailboxes, letters}) => {
         
         <h2>Letters</h2>
         <hr />
+        
+        {selectedLetters.length === 0 ? <h3>No Letters</h3> 
+        :
         <ul>
-            {selectedLetters.map((selectedLetter, index)=>{
-                return (
-                    <li key={index}>
-                        <h3>{selectedLetter.recipient}</h3>
-                        <p>{selectedLetter.message}</p>
-                    </li>
-                )
-            })}
+        {selectedLetters.map((selectedLetter, index)=>{
+            return (
+                <li key={index}>
+                    <h3>{selectedLetter.recipient}</h3>
+                    <p>{selectedLetter.message}</p>
+                </li>
+            )
+        })}
         </ul>
+        }
+       
     </>
 
   )
